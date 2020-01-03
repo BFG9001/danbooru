@@ -411,19 +411,19 @@ class User < ApplicationRecord
         true
       elsif is_admin?
         true
-      elsif created_at > 1.week.ago
-        false
+      #elsif created_at > 1.week.ago  ##What the fuck is this shit? This should be configurable, not hardcoded
+        #false
       else
         upload_limit > 0
       end
     end
 
     def upload_limited_reason
-      if created_at > 1.week.ago
-        "cannot upload during your first week of registration"
-      else
+      #if created_at > 1.week.ago ##Commenting out. We do not need this for the scale of our deployment.
+      #  "cannot upload during your first week of registration"
+      #else
         "have reached your upload limit for the day"
-      end
+      #end
     end
 
     def can_comment?
