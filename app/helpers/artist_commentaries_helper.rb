@@ -15,7 +15,6 @@ module ArtistCommentariesHelper
       rawPostNumber = postRef[2..-1]
       modifiedText = "\"" + postRef + "\"" ":[https://desuarchive.org/m/post/" + rawPostNumber + "]"
       description.gsub!(postRef, modifiedText)
-      puts(description)
     end
     #The above is to automatically parse and hotlink ">>#######" post numbers from 4chan.org/m/ and turn them into links to desu archive. The actual linking is done by DText.
 
