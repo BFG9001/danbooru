@@ -13,7 +13,7 @@ module ArtistCommentariesHelper
     descriptionX.scan(_mSVdesuArchiveRefPattern).each do |postRef|
       postRef = postRef[0..-2] #remove the whitespace from the regular expression. 
       rawPostNumber = postRef[2..-1]
-      modifiedText = "\"" + postRef + "\"" ":[https://desuarchive.org/m/post/" + rawPostNumber + "]"
+      modifiedText = ">>\"" + rawPostNumber + "\"" ":[https://desuarchive.org/m/post/" + rawPostNumber + "]"
       description.gsub!(postRef, modifiedText)
     end
     #The above is to automatically parse and hotlink ">>#######" post numbers from 4chan.org/m/ and turn them into links to desu archive. The actual linking is done by DText.
